@@ -62,3 +62,6 @@ nav ul a {
   text-align: center;
 }
 
+nav ul #currentpage {
+  background-color: coral;
+}
