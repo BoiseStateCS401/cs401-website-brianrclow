@@ -11,18 +11,19 @@ if(empty($username) || (strlen($username) >= 35)) {
   $_SESSION['username'] = $username;
 }
 
-if(empty($password) || (strlen($password) < 8 || strlen($password) >= 100)) {
+if(empty($password) || (strlen($password) < 10 || strlen($password) >= 160)) {
   $error .= "ERROR: password is incorrect. Please try again ";
 }else {
   $_SESSION['password'] = $passwordAgain;
 }
+
 $_SESSION["error"] = $error;
 
 if($error === "") { 
-  header('Location: ../support.php');
+  header('Location: support.php');
 }else{
-   $valid = false;
-   header('Location: ../registration.php?valid=false');
+   $validLogin = false;
+   header('Location: login.php?validLogin=false');
 } ?>
 
 <p>Name: <?= htmlspecialchars($name) ?></p>

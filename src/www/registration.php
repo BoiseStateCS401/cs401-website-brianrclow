@@ -7,7 +7,7 @@
 <h1>Registration</h1>
 
 <section>
-            <form id="registration" method="POST" action="requests/registration-handler.php">
+            <form id="registration" method="POST" action="registration-handler.php">
                 <table>
                     <tr>
                         <td><label for="query">Username:</label></td>
@@ -28,7 +28,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="query">Password Again:</label></td>
+                        <td><label for="query">Repeat Password:</label></td>
                         <td>
                         <input type="password" id="query" name="passwordAgain" required="true">
                         </td>
@@ -40,10 +40,16 @@
                     </tr>
                 </table>
             </form>
+
             <?php
-            $valid = isset($_GET['valid']) ? $_GET['valid'] : true;
-            if($valid == 'false') { ?>
+            $validRegistration = isset($_GET['vavalidRegistrationlid']) ? $_GET['validRegistration'] : true;
+            if($validRegistration == 'false') { ?>
+
                 <span><?php print_r($_SESSION['error']); ?></span>
+
             <?php }
             ?>
         </section>
+    <?php 
+	include("footer.php");
+?>

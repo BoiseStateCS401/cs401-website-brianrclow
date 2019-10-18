@@ -5,7 +5,7 @@
 
 <h1>Login</h1>
 
-<form id="login" action="login.php" method="post">
+<form id="login" method="POST" action="login-handler.php">
     <table>
         <tr>
             <td>Username:</td>

@@ -30,12 +30,14 @@ if($password !== $passwordAgain){
 }
 $_SESSION["error"] = $error;
 
+// no errors in registration forms
  if($error === "") { 
-    header('Location: ../support.php');
+    header('Location: support.php');
  }else{
-     $valid = false;
-     header('Location: ../registration.php?valid=false');
- } ?>
+     $validRegistration = false;
+     header('Location: registration.php?validRegistration=false'); 
+     
+} ?>
 
 <p>username: <?= htmlspecialchars($username) ?></p>
 <p>email: <?= htmlspecialchars($email) ?></p>
