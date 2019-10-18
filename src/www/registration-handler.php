@@ -6,22 +6,26 @@ $password = $_POST['password'];
 $passwordAgain = $_POST['passwordAgain'];
 $error = "";
 
+// checks username, must start with a letter, must be between 5 to 50 characters using letters and numbers only
 if ( !preg_match('/^[A-Za-z][A-Za-z0-9]{4,51}$/', $username) ) {
-  	$error .= "ERROR: name must start with a letter and be between 6 to 50 characters. Please try again ";
+  	$error .= "ERROR: name must start with a letter and be between 5 to 50 characters. Please try again ";
 }else {
     $_SESSION['username'] = $username;
 }
+// checks email
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $error .= "ERROR: email empty or too long or invalid. Please try again ";
 }
 else {
     $_SESSION['email'] = $email;
 }
+//checks password
 if(empty($password) || strlen($password) < 10 || strlen($password) >= 160) {
     $error .= "ERROR: password empty or too long or too short. Please try again ";
 }else {
     $_SESSION['password'] = $passwordAgain;
 }
+// checks repeated password
 if(empty($passwordAgain) || strlen($passwordAgain) < 10 || strlen($passwordAgain) >= 160) {
     $error .= "ERROR: password check empty or too long or too short. Please try again ";
 }

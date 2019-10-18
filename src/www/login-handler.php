@@ -4,13 +4,14 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $error = "";
 
-
-if(empty($username) || (strlen($username) >= 35)) {
+// checks username, must start with a letter, must be between 5 to 50 characters using letters and numbers only
+if ( !preg_match('/^[A-Za-z][A-Za-z0-9]{4,51}$/', $username) ) {
     $error .= "ERROR: username is incorrect. Please try again.";
 }else {
   $_SESSION['username'] = $username;
 }
 
+// checks password
 if(empty($password) || (strlen($password) < 10 || strlen($password) >= 160)) {
   $error .= "ERROR: password is incorrect. Please try again ";
 }else {
