@@ -24,10 +24,9 @@ if($error === "") {
 }else{
    $validLogin = false;
    header('Location: login.php?validLogin=false');
+   $_SESSION['presets'] = array('username' => htmlspecialchars($username));
 } ?>
 
-<p>Name: <?= htmlspecialchars($name) ?></p>
-<p>email: <?= htmlspecialchars($email) ?></p>
+<p>Username: <?= htmlspecialchars($username) ?></p>
 <p>password: <?= htmlspecialchars($password) ?></p>
-<p>password again: <?= htmlspecialchars($passwordAgain) ?></p>
 
