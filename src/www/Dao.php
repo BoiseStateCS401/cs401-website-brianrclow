@@ -2,6 +2,35 @@
 require_once("../db/config.php");
 class Dao
 {
+	
+	// gets all users from the table
+	public function getUsers()
+	{
+		// establish connection
+		$conn = $this->getConnection();
+		// use connections and run SQL query
+		return $conn->query("SELECT * FROM users");
+	}
+
+	// check if a user exists by email
+	public function userExists($email)
+	{
+		// establish connection
+		$conn = $this->getConnection();
+		// use connections and run SQL query
+		$stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
+		
+		$stmt->bindParam(':email', $email);
+		$stmt->execute();
+		if($stmt->fetch()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
+	
 	/**
 	 * Creates and returns a PDO connection using the database connection
 	 * url specified in the CLEARDB_DATABASE_URL environment variable.
