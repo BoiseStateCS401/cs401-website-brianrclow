@@ -8,21 +8,37 @@
 
 <section>
             <form id="registration" method="POST" action="requests/registration-handler.php">
-                <label for="query">Name</label>
-                <input type="text" id="name" name="name">
-
-                <label for="query">Email</label>
-                <input type="text" id="query" name="email" 
-                
-                >
-
-                <label for="query">Password</label>
-                <input type="password" id="query" name="password" required="true">
-
-                <label for="query">Password Again</label>
-                <input type="password" id="query" name="passwordAgain">
-
-                <input type="submit" value="Register">
+                <table>
+                    <tr>
+                        <td><label for="query">Username:</label></td>
+                        <td>
+                        <input type="text" id="username" name="username" required="true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="query">Email:</label></td>
+                        <td>
+                        <input type="text" id="query" name="email" required="true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="query">Password:</label></td>
+                        <td>
+                        <input type="password" id="query" name="password" required="true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="query">Password Again:</label></td>
+                        <td>
+                        <input type="password" id="query" name="passwordAgain" required="true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <input type="submit" value="Register">
+                        </td>
+                    </tr>
+                </table>
             </form>
             <?php
             $valid = isset($_GET['valid']) ? $_GET['valid'] : true;

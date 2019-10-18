@@ -3,33 +3,25 @@
     include("header.php");
 ?>
 
-<p> this is the login page <p>
+<h1>Login</h1>
 
-
-<!-- <p> login <p>
-<p> name <p>
-<p> email <p>
-<p> password <p>
-<p> password again <p>
-<p> submit <p> -->
-
-<form action="login.php"method="post">
+<form id="login" action="login.php" method="post">
     <table>
         <tr>
             <td>Username:</td>
             <td>
-                <input type="text" name="user">
+                <input type="text" name="username" required="true">
             </td>
         </tr>
         <tr>
         <td>Password:</td>
             <td>
-                <input type="password" name="user">
+                <input type="password" name="password" required="true">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="submit" name="submit" value="login">
+                <input type="submit" name="submit" value="Login">
             </td>
         </tr>
     </table>
