@@ -21,6 +21,7 @@ if(empty($password) || (strlen($password) < 10 || strlen($password) >= 160)) {
 $_SESSION["error"] = $error;
 
 if($error === "") { 
+  $validLogin = true;
   header('Location: support.php');
 }else{
    $validLogin = false;

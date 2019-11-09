@@ -1,63 +1,66 @@
 <?php
-require_once("../db/config.php");
 class Dao
 {
+	private $host = 'xefi550t7t6tjn36.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+	private $dbname = 'lc21acry1dwuj1mk';
+	private $username = 'f6sl32mav9ykpww2';
+	private $password = 'waj3pfigr5ng76ky';
+	private $logger;
 	
-	// gets all users from the table
-	public function getUsers()
-	{
-		// establish connection
-		$conn = $this->getConnection();
-		// use connections and run SQL query
-		return $conn->query("SELECT * FROM users");
+	public function getConnection() {
+	  try {
+		 $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
+	  } catch (Exception $e) {
+		echo print_r($e,1);
+	  }
+	  return $connection;
 	}
-
-	// check if a user exists by email
-	public function userExists($email)
+	  
+	public function getComments() {
+	  $conn = $this->getConnection();
+	  try {
+	  return $conn->query("select * from chat order by PostDate desc", PDO::FETCH_ASSOC);
+	  } catch(Exception $e) {
+		echo print_r($e,1);
+		exit();
+	  }
+	}
+  
+	  public function isValidUser($username, $password){
+		  $conn = $this->getConnection();
+		  $loginquery = "SELECT * FROM user WHERE Username = ? && Password = ?";
+		   $q = $conn->prepare($loginquery);
+		   $q->execute([$username, $password]);
+		  $valid = $q->fetch();
+		  return $valid;
+	  }
+	  
+  
+	public function registerUser($u_name, $u_email, $u_password)
 	{
-		// establish connection
-		$conn = $this->getConnection();
-		// use connections and run SQL query
-		$stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
+	 $conn = $this->getConnection();
+	  $Query = "SELECT * FROM user WHERE Username = ? && Email = ?";
+	  $q1 = $conn ->prepare($Query);
+	  $q1->execute([$u_name,$u_email]);
+	  $valid = $q1->fetch();
 		
-		$stmt->bindParam(':email', $email);
-		$stmt->execute();
-		if($stmt->fetch()) {
-			return true;
-		} else {
-			return false;
+		if(empty($valid))
+		{
+			$conn = $this->getConnection();
+			$registerQuery = "insert into user (Username, Email, Password) values (:Username, :Email, :Password)";
+			$q = $conn->prepare($registerQuery);
+			$q->bindParam(":Username", $u_name);
+			$q->bindParam(":Email", $u_email);
+			$q->bindParam(":Password", $u_password);
+			$q->execute();
+			$_SESSION['messages'] = "You are registered";
+			header("Location: Login.php");
+		}
+		else{
+			$_SESSION['exists'] = "Your user name or email already exists!";
+			header("Location: Register.php");
 		}
 	}
-	
-	
-	
-	/**
-	 * Creates and returns a PDO connection using the database connection
-	 * url specified in the CLEARDB_DATABASE_URL environment variable.
-	 */
-	private function getConnection()
-	{
-		$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-		$host = $url["host"];
-		$db   = substr($url["path"], 1);
-		$user = $url["user"];
-		$pass = $url["pass"];
-
-		$conn = new PDO("mysql:host=$host;dbname=$db;", $user, $pass);
-
-		// Turn on exceptions for debugging. Comment this out for
-		// production or make sure to use try-catch statements.
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		return $conn; 
-	}
-	/**
-	 * Returns the database connection status string.
-	 */
-	public function getConnectionStatus()
-	{
-		$conn = $this->getConnection();
-		return $conn->getAttribute(constant("PDO::ATTR_CONNECTION_STATUS"));
-	}
-}
+	  
+  }
+  

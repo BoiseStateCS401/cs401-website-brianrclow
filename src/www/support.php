@@ -11,6 +11,11 @@
 		</tr>
 
 	</table>
+	<?php
+		if($validLogin = true){?>
+			<p> You are logged in!
+			</p>
+			<?php }?>
 
 	<img src="images/supportpage.png" alt="support page">
 

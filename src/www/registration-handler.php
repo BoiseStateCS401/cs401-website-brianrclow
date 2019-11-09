@@ -1,4 +1,9 @@
 <?php
+
+include_once 'Dao.php';
+
+
+
 session_start();
 $username = $_POST['username'];
 $email = $_POST['email'];
@@ -36,6 +41,11 @@ $_SESSION["error"] = $error;
 
 // no errors in registration forms
  if($error === "") { 
+     
+    include_once 'Dao.php';
+    $dao = new Dao();
+    $dao->registerUser($username,$email,$password);
+
     header('Location: support.php');
  }else{
      $validRegistration = false;
