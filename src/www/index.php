@@ -1,4 +1,5 @@
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
 <head>
 	<?php 
 	$page='index';
@@ -7,8 +8,15 @@
 </head>
 
 <body>
-	<p>home<p>
-	<img src="images/homepage.png" alt="home page">
+
+
+	<p>My Dwel mobile app</p>
+	<p>Unified Roommate Platform</p>
+	<button class="btn download-button">Hover Over Me</button>
+
+	<img src="./images/placeholder_iphone_screenshot.png">
+
+
 </body>
 <?php
 	include("footer.php");

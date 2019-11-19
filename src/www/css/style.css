@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 header{
   position: fixed;
 }
@@ -42,15 +43,28 @@ nav ul a {
 
 }
 
-.home-screenshot {
-  height: 20%;
-  width: 20%;
+.btn {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .download-button {
-  height: 20%;
-  width: 20%;
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
 }
+
+.btn:hover {opacity: 1}
 
 .footer {
   height: 40px;
