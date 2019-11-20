@@ -11,34 +11,34 @@
         <table>
             <tr>
                 <td>
-                    <label for="query">Username:</label>
+                    <label for="username">Username:</label>
                 </td>
                 <td>
-                    <input type="text" id="query" name="username" required="true" value="<?= $_SESSION['presets']['username'] ?>" >                        
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="query">Email:</label>
-                </td>
-                <td>
-                    <input type="text" id="query" name="email" required="true" value="<?= $_SESSION['presets']['email'] ?>">
+                    <input type="text" id="username" name="username" required="true" value="<?= $_SESSION['presets']['username'] ?>" >                        
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="query">Password:</label>
+                    <label for="email">Email:</label>
                 </td>
                 <td>
-                    <input type="password" id="query" name="password" required="true">
+                    <input type="text" id="email" name="email" required="true" value="<?= $_SESSION['presets']['email'] ?>">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="query">Repeat Password:</label>
+                    <label for="password">Password:</label>
                 </td>
                 <td>
-                    <input type="password" id="query" name="passwordAgain" required="true">
+                    <input type="password" id="password" name="password" required="true">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="repeat-password">Repeat Password:</label>
+                </td>
+                <td>
+                    <input type="password" id="repeat-password" name="passwordAgain" required="true">
                 </td>
             </tr>
             <tr>

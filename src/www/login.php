@@ -10,15 +10,15 @@
     <form id="login" method="POST" action="login-handler.php">
         <table>
             <tr>
-                <td>Username:</td>
+                <td><label for="username">Username:</label></td>
                 <td>
-                    <input type="text" name="username" required="true" value="<?= $_SESSION['presets']['username'] ?>">
+                    <input type="text" name="username" id="username" required="true" value="<?= $_SESSION['presets']['username'] ?>">
                 </td>
             </tr>
             <tr>
-            <td>Password:</td>
+            <td><label for="password">Password:</label></td>
                 <td>
-                    <input type="password" name="password" required="true">
+                    <input type="password" name="password" id="password" required="true">
                 </td>
             </tr>
             <tr>
