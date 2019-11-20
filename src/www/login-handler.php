@@ -22,7 +22,7 @@ $_SESSION["error"] = $error;
 
 if($error === "") { 
   $validLogin = true;
-  header('Location: support.php');
+  header('Location: account-main.php');
 }else{
    $validLogin = false;
    header('Location: login.php?validLogin=false');

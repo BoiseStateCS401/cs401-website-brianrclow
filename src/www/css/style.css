@@ -43,28 +43,15 @@ nav ul a {
 
 }
 
-.btn {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
+.zoom {
+  /* padding: 1px; */
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
 }
 
-.download-button {
-  background-color: #f4511e;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.6;
-  transition: 0.3s;
+.zoom:hover {
+  transform: scale(1.1);
 }
-
-.btn:hover {opacity: 1}
 
 .footer {
   height: 40px;
@@ -78,4 +65,19 @@ nav ul a {
 
 nav ul #currentpage {
   background-color: coral;
+}
+
+
+
+.download-button {
+  background-color: coral;
+  border: 0px;
+  height: 20px;
+  width: 80px;
+  opacity: 70;
+  cursor: pointer;
+}
+
+.download-button button:hover {
+  opacity: 70;
 }

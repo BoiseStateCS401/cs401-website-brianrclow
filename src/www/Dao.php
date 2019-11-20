@@ -1,10 +1,10 @@
 <?php
 class Dao
 {
-	private $host = 'xefi550t7t6tjn36.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
-	private $dbname = 'lc21acry1dwuj1mk';
-	private $username = 'f6sl32mav9ykpww2';
-	private $password = 'waj3pfigr5ng76ky';
+	private $host = 'us-cdbr-iron-east-05.cleardb.net';
+	private $dbname = 'heroku_da004f557afe2d0';
+	private $username = 'b5b9568d237966';
+	private $password = 'b5ab58cd';
 	private $logger;
 	
 	public function getConnection() {
@@ -15,43 +15,33 @@ class Dao
 	  }
 	  return $connection;
 	}
-	  
-	public function getComments() {
-	  $conn = $this->getConnection();
-	  try {
-	  return $conn->query("select * from chat order by PostDate desc", PDO::FETCH_ASSOC);
-	  } catch(Exception $e) {
-		echo print_r($e,1);
-		exit();
-	  }
-	}
   
 	  public function isValidUser($username, $password){
 		  $conn = $this->getConnection();
-		  $loginquery = "SELECT * FROM user WHERE Username = ? && Password = ?";
+		  $loginquery = "SELECT * FROM users WHERE name = ? && password = ?";
 		   $q = $conn->prepare($loginquery);
 		   $q->execute([$username, $password]);
 		  $valid = $q->fetch();
 		  return $valid;
 	  }
-	  
-  
+
+
 	public function registerUser($u_name, $u_email, $u_password)
 	{
 	 $conn = $this->getConnection();
-	  $Query = "SELECT * FROM user WHERE Username = ? && Email = ?";
+	  $Query = "SELECT * FROM users WHERE name = ? && email = ?";
 	  $q1 = $conn ->prepare($Query);
-	  $q1->execute([$u_name,$u_email]);
+	  $q1->execute([$u_name,$u_password]);
 	  $valid = $q1->fetch();
 		
 		if(empty($valid))
 		{
 			$conn = $this->getConnection();
-			$registerQuery = "insert into user (Username, Email, Password) values (:Username, :Email, :Password)";
+			$registerQuery = "insert into users (name, email, password) values (:name, :email, :password)";
 			$q = $conn->prepare($registerQuery);
-			$q->bindParam(":Username", $u_name);
-			$q->bindParam(":Email", $u_email);
-			$q->bindParam(":Password", $u_password);
+			$q->bindParam(":name", $u_name);
+			$q->bindParam(":email", $u_email);
+			$q->bindParam(":password", $u_password);
 			$q->execute();
 			$_SESSION['messages'] = "You are registered";
 			header("Location: Login.php");
