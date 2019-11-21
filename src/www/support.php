@@ -16,6 +16,7 @@
 			<p> You are logged in!
 			</p>
 			<?php }?>
+	<p class="logout-confirmation"></p>
 
 	<img src="images/supportpage.png" alt="support page">
 

@@ -1,10 +1,6 @@
 <?php
-
-include_once 'Dao.php';
-
-
-
 session_start();
+include_once 'Dao.php';
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
