@@ -7,6 +7,7 @@
 
 header{
   position: fixed;
+  top: 0;
 }
 
 nav {
@@ -44,9 +45,8 @@ nav ul a {
 }
 
 .zoom {
-  /* padding: 1px; */
   transition: transform .2s; /* Animation */
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .zoom:hover {
@@ -61,23 +61,76 @@ nav ul a {
   background-color: #298085;
   color:  #d5dbdb;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-nav ul #currentpage {
-  background-color: coral;
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #298085;
+  font-size: 50px;
 }
-
-
-
-.download-button {
-  background-color: coral;
-  border: 0px;
-  height: 20px;
-  width: 80px;
-  opacity: 70;
+.title-line1 {
+  border: 0 none;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 3px;
+  background-color:#298085;
+  margin-bottom: 10px;
+}
+.title-line2 {
+  border: 0 none;
+  width: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 3px;
+  background-color:#298085;
+  margin-bottom: 10px;
+}
+.support-buttons {
+  background-color: #298085;
+  border: none;
+  color: #d5dbdb;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   cursor: pointer;
+  font-size: 16px;
+  padding: 14px 40px;
+  margin: 0 auto;
 }
 
-.download-button button:hover {
-  opacity: 70;
+.screenshots-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
 }
+
+.download-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.download-flex-container > div {
+  flex-direction: column;
+  margin: 10px;
+}
+
+.app-store-button {
+  height: auto; 
+  width: auto; 
+  max-width: 250px; 
+  max-height: 250px;
+}
+
+.main-logo {
+  color: white;
+}
+

@@ -1,4 +1,4 @@
 <footer class="footer">
-	&copy; Copyright 2019 Brian R. Clow
+	Copyright &copy; 2019 <a href="https://www.linkedin.com/in/brianrclow/" title="Brian Clow's LinkedIn Profile">Brian R. Clow</a>
 </footer>
 </html>

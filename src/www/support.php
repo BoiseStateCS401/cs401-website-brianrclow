@@ -2,20 +2,20 @@
     $page='support';
     include("header.php");
 ?>
-	<table>
-		<tr>
-			<p><a href="login.php">Login</a><p>
-		</tr>
-		<tr>
-			<p><a href="registration.php">Register</a><p>
-		</tr>
 
-	</table>
+	<p class="title">support</p>
+	<hr class="title-line1"></hr>
+	<hr class="title-line2"></hr>
+
+	<button class="support-buttons"><a href="login.php">Login</a></button>
+	<button class="support-buttons"><a href="registration.php">Register</a></button>
+
+	
 	<?php
 		if($validLogin = true){?>
-			<p> You are logged in!
-			</p>
-			<?php }?>
+			<p> You are logged in!</p>
+	<?php }?>
+
 	<p class="logout-confirmation"></p>
 
 	<img src="images/supportpage.png" alt="support page">

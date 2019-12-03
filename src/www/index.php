@@ -12,12 +12,11 @@
 
 	<p>My Dwel mobile app</p>
 	<p>Unified Roommate Platform</p>
-	<button class="download-button">Download</button>
 
-	<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
+	<div><img class="zoom" src="/images/placeholder_iphone_screenshot.png"></div>
 	
 
-	<script src="enlarge-screenshot.js"></script>
+	<script src="enlarge-screenshot.js" defer></script>
 
 </body>
 <?php
