@@ -1,25 +1,26 @@
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<!-- HEADER -->
+<?php 
+$page='index';
+include("header.php");
+?>
 
-<head>
-	<?php 
-	$page='index';
-	include("header.php");
-	?>
-</head>
 
+<!-- BODY -->
 <body>
-
-
-	<p>My Dwel mobile app</p>
-	<p>Unified Roommate Platform</p>
-
-	<div><img class="zoom" src="/images/placeholder_iphone_screenshot.png"></div>
-	
-
+	<div class="download-flex-container">
+		<div>
+			<p class="main-title-page">My Dwell Mobile</p>
+			<p class="main-subtitle-page">Your Unified Housing Platform</p>
+		</div>
+		<div>
+			<div><img class="zoom " src="/images/placeholder_iphone_screenshot.png"></div>
+		</div>
+	</div>
 	<script src="enlarge-screenshot.js" defer></script>
-
 </body>
+
+
+<!-- FOOTER -->
 <?php
 	include("footer.php");
 ?>
-

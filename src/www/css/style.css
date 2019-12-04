@@ -24,13 +24,6 @@ nav ul {
   width: 35%;
 }
 
-.logo{
-  color: #d5dbdb;
-  text-transform: uppercase;
-  letter-spacing: 5x;
-  font-size: 25px;
-}
-
 li {
   list-style: none;
 }
@@ -41,8 +34,8 @@ nav ul a {
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 16px;
-
 }
+
 
 .zoom {
   transition: transform .2s; /* Animation */
@@ -54,16 +47,28 @@ nav ul a {
 }
 
 .footer {
-  height: 40px;
+  background-color: #298085;
   left: 0;
   bottom: 0;
+  height: 40px;
   width: 100%;
-  background-color: #298085;
+
+  display: flex;
+  flex-direction: column;
+  
+  /* text */
   color:  #d5dbdb;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+
+  /* padding: 50px 0; */
 }
+
+
+
+
+
 
 .title {
   display: flex;
@@ -74,6 +79,7 @@ nav ul a {
   padding-bottom: 10px;
   color: #298085;
   font-size: 50px;
+  font-weight: bold;
 }
 .title-line1 {
   border: 0 none;
@@ -109,13 +115,16 @@ nav ul a {
 .screenshots-flex-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 10px;
 }
 
 .download-flex-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 10px;
+  text-align: center;
 }
 
 .download-flex-container > div {
@@ -126,11 +135,36 @@ nav ul a {
 .app-store-button {
   height: auto; 
   width: auto; 
-  max-width: 250px; 
-  max-height: 250px;
+  max-width: 200px; 
+  max-height: 200px;
 }
 
-.main-logo {
-  color: white;
+
+.flex-item {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
+
+.main-title-page {
+  font-size: 50px;
+  font-weight: bold;
+  color: #298085;
+}
+
+.main-subtitle-page {
+  font-size: 30px;
+  color: #298085;
+}
+
+
+.features-titles {
+  font-size: 30px;
+  font-weight: bold;
+  color: #298085;
+}
+
+.features-6-groups {
+  text-align: center;
+  padding: 50px;
+}

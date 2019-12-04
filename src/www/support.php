@@ -7,9 +7,15 @@
 	<hr class="title-line1"></hr>
 	<hr class="title-line2"></hr>
 
-	<button class="support-buttons"><a href="login.php">Login</a></button>
-	<button class="support-buttons"><a href="registration.php">Register</a></button>
-
+	<div class="download-flex-container">
+		<div>
+			<button class="support-buttons"><a href="login.php">Login</a></button>
+		</div>
+		<div>
+			<button class="support-buttons"><a href="registration.php">Register</a></button>
+		</div>
+	</div>
+	
 	
 	<?php
 		if($validLogin = true){?>

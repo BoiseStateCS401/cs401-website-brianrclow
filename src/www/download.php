@@ -7,12 +7,11 @@
 	<hr class="title-line1"></hr>
 	<hr class="title-line2"></hr>
 
+	<!-- main flex area that creates column-->
 	<div class="download-flex-container">
-
-		<!-- this div is so there is one column -->
 		<div>
-			<a href="https://apps.apple.com/us/app/yl-boise-state/id1477862280"><img class="app-store-button" src="images/downloadappstore.png" alt="download page"></a>
-			<div><img class="zoom" src="/images/placeholder_iphone_screenshot.png"></div>
+			<div><img class="zoom" src="/images/placeholder_iphone_screenshot.png"></div>	
+			<div><a href="https://apps.apple.com/us/app/yl-boise-state/id1477862280"><img class="app-store-button" src="images/downloadappstore.png" alt="download page"></a></div>
 		</div>
 	</div>
 
