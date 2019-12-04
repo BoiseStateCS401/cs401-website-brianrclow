@@ -1,19 +1,29 @@
+<!-- HEADER -->
 <?php 
-$page='screenshots';
-include("header.php");
+	$page='screenshots';
+	include("header.php");
 ?>
 
-<p class="title">screenshots</p>
-<hr class="title-line1"></hr>
-<hr class="title-line2"></hr>
+<!-- BODY -->
+<body>
 
-<div class="screenshots-flex-container">
-	<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
-	<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
-	<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
-	<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
-</div>
+	<!-- page title and lines -->
+	<p class="title">screenshots</p>
+	<hr class="title-line1"></hr>
+	<hr class="title-line2"></hr>
 
+	<!-- app screenshots- likely 4? -->
+	<div class="screenshots-flex-container">
+		<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
+		<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
+		<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
+		<img class="zoom" src="/images/placeholder_iphone_screenshot.png">
+	</div>
+	
+</body>
+
+
+<!-- FOOTER -->
 <?php 
 	include("footer.php");
 ?>

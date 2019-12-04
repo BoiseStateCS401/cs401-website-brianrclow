@@ -76,7 +76,7 @@ nav ul a {
   justify-content: center;
   text-align: center;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   color: #298085;
   font-size: 50px;
   font-weight: bold;
@@ -107,8 +107,8 @@ nav ul a {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 16px;
-  padding: 14px 40px;
+  font-size: 22px;
+  padding: 14px 25px;
   margin: 0 auto;
 }
 
@@ -139,6 +139,20 @@ nav ul a {
   max-height: 200px;
 }
 
+.support-flex-container {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.support-flex-container > div {
+  flex-direction: column;
+  margin: 10px;
+}
+
 
 .flex-item {
   display: flex;
@@ -167,4 +181,36 @@ nav ul a {
 .features-6-groups {
   text-align: center;
   padding: 50px;
+}
+
+
+.login-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.login-container > div {
+  flex-direction: column;
+  margin: 10px;
+}
+
+.submit-button{
+  margin: 10px;
+}
+
+
+.registration-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.registration-container > div {
+  flex-direction: column;
+  margin: 10px;
 }

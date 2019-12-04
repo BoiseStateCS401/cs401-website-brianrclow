@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <?php 
-$page='index';
-include("header.php");
+	$page='index';
+	include("header.php");
 ?>
 
 

@@ -1,7 +1,12 @@
+<!-- HEADER -->
 <?php 
     $page='download';
     include("header.php");
 ?>
+
+<!-- BODY -->
+<body>
+
 	<!-- page title and lines -->
 	<p class="title">download</p>
 	<hr class="title-line1"></hr>
@@ -14,7 +19,11 @@
 			<div><a href="https://apps.apple.com/us/app/yl-boise-state/id1477862280"><img class="app-store-button" src="images/downloadappstore.png" alt="download page"></a></div>
 		</div>
 	</div>
+	
+</body>
 
+
+<!-- FOOTER -->
 <?php 
 	include("footer.php");
 ?>
