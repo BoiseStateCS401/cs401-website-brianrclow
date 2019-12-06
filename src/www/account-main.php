@@ -1,12 +1,6 @@
-<?php 
-session_start();
-$page='account-main';
-include("header.php");
 
-?>
 <body>
-<h2>Welcome to your account!</h2>
-<p>Web login allows you to edit your account information:</p>
+<h2 class="account-main-title">Welcome to your account!</h2>
 
 <form id="registration" method="POST">
         <table>
@@ -34,23 +28,15 @@ include("header.php");
                     <input type="password" id="password" name="password">
                 </td>
             </tr>
-            <tr>
-                <td>
-					<input type="submit" value="Confirm changes" class="confirmChangesButton">
-                </td>
-            </tr>
         </table>
     </form>
+
 <p id="edit-account-info"></p>
+<input type="submit" value="Confirm changes" class="confirmChangesButton">
 <input type="submit" value="logout" class="logoutButton"></input>
-<?php
-		if($validLogin = false){?>
+    <?php if($validLogin = false){?>
 			<p> You are logged out!</p>
 			<?php }?>
 <script src="/js/confirm-changes.js" defer></script>
 <script src="/js/confirm-logout.js" defer></script>
 </body>
-
-<?php 
-	include("footer.php");
-?>
