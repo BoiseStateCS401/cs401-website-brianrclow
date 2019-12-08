@@ -15,17 +15,18 @@ class Dao
 	  }
 	  return $connection;
 	}
-  
-	  public function isValidUser($username, $password){
-		  $conn = $this->getConnection();
-		  $loginquery = "SELECT * FROM users WHERE name = ? && password = ?";
-		   $q = $conn->prepare($loginquery);
-		   $q->execute([$username, $password]);
-		  $valid = $q->fetch();
-		  return $valid;
-	  }
 
+	// VALID USER CHECK used for login
+	public function isValidUser($username, $password){
+		$conn = $this->getConnection();
+		$loginquery = "SELECT * FROM users WHERE name = ? && password = ?";
+		$q = $conn->prepare($loginquery);
+		$q->execute([$username, $password]);
+		$valid = $q->fetch();
+		return $valid;
+	}
 
+	// REGISTER NEW USER
 	public function registerUser($u_name, $u_email, $u_password)
 	{
 	 $conn = $this->getConnection();

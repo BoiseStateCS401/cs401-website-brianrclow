@@ -1,11 +1,15 @@
 <!-- HEADER -->
 <?php 
 	$page='features';
-	include("header.php");
+	include("head.php");
 ?>
 
 <!-- BODY -->
 <body>
+
+	<?php
+		include("header.php");
+	?>
 
 	<!-- page title and lines -->
 	<p class="title">features</p>
@@ -59,9 +63,10 @@
 
 	</div>
 
-</body>
-
-<!-- FOOTER -->
+	<!-- FOOTER -->
 <?php 
 	include("footer.php");
 ?>
+
+</body>
+

@@ -1,11 +1,15 @@
 <!-- HEADER -->
 <?php 
 	$page='screenshots';
-	include("header.php");
+	include("head.php");
 ?>
 
 <!-- BODY -->
 <body>
+
+	<?php
+		include("header.php");
+	?>
 
 	<!-- page title and lines -->
 	<p class="title">screenshots</p>

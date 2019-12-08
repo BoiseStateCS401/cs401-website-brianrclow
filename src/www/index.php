@@ -1,12 +1,15 @@
 <!-- HEADER -->
 <?php 
 	$page='index';
-	include("header.php");
+	include("head.php");
 ?>
 
 
 <!-- BODY -->
 <body>
+	<?php
+		include("header.php");
+	?>
 	<div class="download-flex-container">
 		<div>
 			<p class="main-title-page">My Dwell Mobile</p>
@@ -17,10 +20,11 @@
 		</div>
 	</div>
 	<script src="enlarge-screenshot.js" defer></script>
+
+	<!-- FOOTER -->
+	<?php
+		include("footer.php");
+	?>
 </body>
 
 
-<!-- FOOTER -->
-<?php
-	include("footer.php");
-?>

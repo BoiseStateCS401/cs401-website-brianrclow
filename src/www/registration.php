@@ -1,12 +1,17 @@
-<!-- HEADER -->
+<!-- HEAD -->
 <?php 
     session_start();
     $page='support';
-    include("header.php");
+    include("head.php");
 ?>
 
 <!-- BODY -->
 <body>
+
+    <?php
+		include("header.php");
+    ?>
+    
     <div class="login-container">
         <div>
             <h1 class="title">registration</h1>

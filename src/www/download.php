@@ -1,11 +1,15 @@
 <!-- HEADER -->
 <?php 
     $page='download';
-    include("header.php");
+    include("head.php");
 ?>
 
 <!-- BODY -->
 <body>
+
+	<?php
+		include("header.php");
+	?>
 
 	<!-- page title and lines -->
 	<p class="title">download</p>
@@ -20,10 +24,11 @@
 		</div>
 	</div>
 	
-</body>
-
-
-<!-- FOOTER -->
+	<!-- FOOTER -->
 <?php 
 	include("footer.php");
 ?>
+
+</body>
+
+

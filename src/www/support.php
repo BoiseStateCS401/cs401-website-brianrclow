@@ -1,11 +1,15 @@
 <!-- HEADER -->
 <?php 
     $page='support';
-    include("header.php");
+    include("head.php");
 ?>
 
 <!-- BODY -->
 <body>
+
+<?php
+		include("header.php");
+	?>
 
 <div class="support-flex-container">
 	<div>
@@ -24,7 +28,7 @@
 				<div><a href="login.php"><div class="support-buttons">login</div></a></div>
 				<div><a href="registration.php"><div class="support-buttons">signup</div></a></div>
 			</div>
-			
+
 		<?php } ?>
 
 
@@ -34,12 +38,10 @@
 </div>
 
 
-
-
-</body>
-
-
 <!-- FOOTER -->
 <?php 
 	include("footer.php");
 ?>
+
+
+</body>

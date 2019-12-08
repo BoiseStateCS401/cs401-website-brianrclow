@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// Get all the variables passed into handler
 $username = $_POST['username'];
 $password = $_POST['password'];
 $error = "";
@@ -20,10 +22,16 @@ if(empty($password) || (strlen($password) < 10 || strlen($password) >= 160)) {
 
 $_SESSION["error"] = $error;
 
+
+
+// If there are no errors, then its a valid login
 if($error === "") { 
   $validLogin = true;
   header('Location: account-main.php');
-}else{
+}
+
+// If there are errors then send them back to login and pass the errors
+else{
    $validLogin = false;
    header('Location: login.php?validLogin=false');
    $_SESSION['presets'] = array('username' => htmlspecialchars($username));
