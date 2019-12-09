@@ -2,8 +2,8 @@
 session_start();
 
 // Get all the variables passed into handler
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = $_POST['user_username'];
+$password = $_POST['user_password'];
 $error = "";
 
 // checks username, must start with a letter, must be between 5 to 50 characters using letters and numbers only

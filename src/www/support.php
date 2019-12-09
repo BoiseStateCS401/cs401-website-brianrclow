@@ -14,7 +14,7 @@
 <div class="support-flex-container">
 	<div>
 		<?php
-			if($validLogin = true){
+			if($validLogin = false){
 				include("account-main.php");
 			 } else { ?>
 			 
