@@ -7,12 +7,12 @@
 <body>
 
     <?php
-		include("header.php");
+		include('nav.php');
 	?>
 
     <div class="support-flex-container">
         <div>
-        <h2 class="account-main-title">Change your password</h2>
+        <h1 class="account-main-title">Change your password</h1>
             <p id="edit-account-info"></p>
             <form id="registration" method="POST">
                     <table>

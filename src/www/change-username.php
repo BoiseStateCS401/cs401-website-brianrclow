@@ -7,13 +7,13 @@
 <body>
 
     <?php
-		include("header.php");
+		include('nav.php');
 	?>
 
     <div class="support-flex-container">
         <div>
             <p id="edit-account-info"></p>
-            <h2 class="account-main-title">Change your username</h2>
+            <h1 class="account-main-title">Change your username</h1>
             <form id="registration" method="POST">
                     <table>
                         <tr>

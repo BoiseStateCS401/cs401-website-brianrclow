@@ -8,8 +8,8 @@
 <body>
 
 <?php
-		include("header.php");
-	?>
+	include('nav.php');
+?>
 
 <div class="support-flex-container">
 	<div>

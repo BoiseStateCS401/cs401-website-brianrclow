@@ -5,10 +5,7 @@
 }
 
 
-header{
-  position: fixed;
-  top: 0;
-}
+
 
 nav {
   display: flex;
@@ -33,7 +30,7 @@ nav ul a {
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 
@@ -216,4 +213,19 @@ nav ul a {
 
 .account-main-title{
   padding: 15px;
+}
+
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nav-container > li {
+  margin: 10px;
+}
+
+.linkedin {
+  text-decoration: none;
+  color: #d5dbdb;
 }

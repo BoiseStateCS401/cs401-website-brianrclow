@@ -5,7 +5,6 @@
 USE webDev;
 
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS tasks;
 
 -- this will be the table of current users
 CREATE TABLE users (
@@ -15,20 +14,8 @@ CREATE TABLE users (
 	password VARCHAR (256) NOT NULL                         -- password for user
 );
 
--- this will be the table of current tasks
-CREATE TABLE tasks (
-    taskId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,         -- id of task
-    FOREIGN KEY (userId) REFERENCES users(userId),          -- who posted task
-    title VARCHAR(100) NOT NULL,                            -- title of task
-    description VARCHAR(256) NOT NULL,                      -- description of task
-    dueDate DATE NOT NULL                                   -- when is task due
-);
 
 -- Insert test data into your table so you have something to start with.
-INSERT INTO users (name, email, password) VALUES('brian','brianclow@u.boisestate.edu','Password123');
-INSERT INTO users (name, email, password) VALUES('robert','brianrclow@gmail.com','Password123');
-INSERT INTO users (name, email, password) VALUES('clow','theavocadoking14@gmail.com','Password123');
-
--- Insert test data into table for a task
-INSERT INTO tasks (userId, title, description, dueDate) VALUES('1','dishes','we need get the dishes done!','2019-11-01');
-INSERT INTO tasks (userId, title, description, dueDate) VALUES('2','laundry','we need get the clothes washed!','2019-11-05');
+INSERT INTO users (name, email, password) VALUES('brian','brian@gmail.com','Password123');
+INSERT INTO users (name, email, password) VALUES('robert','robert@gmail.com','Password123');
+INSERT INTO users (name, email, password) VALUES('clow','clow@gmail.com','Password123');

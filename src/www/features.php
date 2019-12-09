@@ -8,7 +8,7 @@
 <body>
 
 	<?php
-		include("header.php");
+		include('nav.php');
 	?>
 
 	<!-- page title and lines -->
