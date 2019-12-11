@@ -1,4 +1,4 @@
-<!-- HEADER -->
+<!-- HEAD -->
 <?php 
     session_start();
     $page='support';
@@ -30,9 +30,13 @@
                             <input type="password" name="user_password" id="password_field" required="true">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <input class="submit-button" type="submit" name="submit" value="enter" >
+                        </td>
+                    </tr>
                 </table>
             </form>
-            <input class="submit-button" type="submit" name="submit" value="enter" >
         </div>
     </div>
 

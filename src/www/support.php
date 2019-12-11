@@ -1,4 +1,4 @@
-<!-- HEADER -->
+<!-- HEAD -->
 <?php 
     $page='support';
     include("head.php");

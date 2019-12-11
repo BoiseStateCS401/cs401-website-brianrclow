@@ -52,10 +52,15 @@
                             <input type="password" id="repeat-password" name="passwordAgain" required="true">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <input class="submit-button" type="submit" value="enter">
+                        </td>
+                    </tr>
                 </table>
             </form>
 
-            <input class="submit-button" type="submit" value="enter">
+
 
             <?php
                 $validRegistration = isset($_GET['vavalidRegistrationlid']) ? $_GET['validRegistration'] : true;
