@@ -1,49 +1,72 @@
-<!-- HEAD -->
 <?php 
     session_start();
-    $page='login';
+
+    // function isLoggedin()  {
+    //     if(isset($_SESSION['isLoggedin']) && $_SESSION['isLoggedin'] === true){
+    //         return true;
+    //     } else{
+    //         return false;
+    //     }
+    // }
+
+    // if(!isLoggedin()){
+    //     // redirect them to login/register page
+    //     header("Location: support.php");
+    // }
+
+
+
+    // if ($Session['userLoggedin'] == true){
     include("head.php");
-?>
-
-
-<!-- BODY -->
-<body>
-
-    <?php
-        include('nav.php');
+    $user_username = $_SESSION['username'];
     ?>
-    <div class="registration-container">
-        <div>
-            <h1 class="account-main-title">Welcome to your account <?php $username ?></h1>
 
-            <h3>Currently our website allows for updating account information.</h3>
-            <h3>There will be more features coming soon...</h3>
+
+    <!-- BODY -->
+    <body>
+
+        <?php
+            include('nav.php');
+        ?>
+        <div class="registration-container">
+            <div>
+                <h1 class="account-main-title">Welcome to your account <?= $user_username ?></h1>
+
+                <h3>Currently our website allows for updating account information.</h3>
+                <h3>There will be more features coming soon...</h3>
+            </div>
         </div>
-    </div>
 
-    <div class="support-flex-container">
-        <div>
-            <a href="change-username.php"><div class="support-buttons">change username</div></a>
+        <div class="support-flex-container">
+            <div>
+                <a href="change-username.php"><div class="support-buttons">change username</div></a>
+            </div>
+            <div>
+                <a href="change-password.php"><div class="support-buttons">change password</div></a>
+            </div>
         </div>
+
         <div>
-            <a href="change-password.php"><div class="support-buttons">change password</div></a>
+            <input type="submit" value="logout" class="logoutButton"></input>
         </div>
-    </div>
-
-    <div>
-        <input type="submit" value="logout" class="logoutButton"></input>
-    </div>
 
 
-    <?php if($validLogin = false){?>
-        <p> You are logged out!</p>
+        <?php if($validLogin = false){?>
+            <p> You are logged out!</p>
         <?php }?>
 
-    <script src="/js/confirm-logout.js" defer></script>
+        <script src="/js/confirm-logout.js" defer></script>
 
-    <!-- FOOTER -->
+        <!-- FOOTER -->
+        <?php 
+            include("footer.php");
+        ?>
+
+    </body>
+
     <?php 
-        include("footer.php");
-    ?>
-
-</body>
+// }
+// else{
+//     include("support.php");
+// }
+?>

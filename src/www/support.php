@@ -1,5 +1,6 @@
 <!-- HEAD -->
 <?php 
+	session_start();
     $page='support';
     include("head.php");
 ?>

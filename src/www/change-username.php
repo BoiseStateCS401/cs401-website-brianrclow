@@ -36,7 +36,7 @@
                 </form>
 
             <input type="submit" value="Confirm changes" class="confirmChangesButton">
-            <a href="support.php"><input type="submit" value="back"></a>
+            <a href="account-main.php"><input type="submit" value="back"></a>
 
         </div>
     </div>

@@ -27,6 +27,8 @@ $_SESSION["error"] = $error;
 // If there are no errors, then its a valid login
 if($error === "") { 
   $validLogin = true;
+  $_SESSION['userLoggedin'] = true;
+  session_regenerate_id(true);
   header('Location: account-main.php');
 }
 
