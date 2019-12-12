@@ -30,9 +30,9 @@
         ?>
         <div class="registration-container">
             <div>
-                <h1 class="account-main-title">Welcome to your account <?= $user_username ?></h1>
+                <h1 class="account-main-title">Welcome to your account <?= $user_username ?>!</h1>
 
-                <h3>Currently our website allows for updating account information.</h3>
+                <h3>Currently our website allows you to update your account information.</h3>
                 <h3>There will be more features coming soon...</h3>
             </div>
         </div>
@@ -46,8 +46,10 @@
             </div>
         </div>
 
-        <div>
-            <input type="submit" value="logout" class="logoutButton"></input>
+        <div class="support-flex-container">
+            <div>
+                <input type="submit" value="logout"></input>
+            </div>
         </div>
 
 

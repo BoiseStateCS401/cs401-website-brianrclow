@@ -43,10 +43,14 @@ $_SESSION["error"] = $error;
     $dao->registerUser($username,$email,$password);
 
     header('Location: support.php');
- }else{
+    die;
+ }
+ // there are errors
+ else{
      $validRegistration = false;
      header('Location: registration.php?validRegistration=false'); 
      $_SESSION['presets'] = array('username' => htmlspecialchars($username),'email' => htmlspecialchars($email));
+     die;
 } ?>
 
 <p>username: <?= htmlspecialchars($username) ?></p>
