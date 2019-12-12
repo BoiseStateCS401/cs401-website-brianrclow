@@ -1,7 +1,6 @@
 <!-- HEAD -->
 <?php 
     session_start();
-    $page='support';
     include("head.php");
 ?>
 
@@ -20,36 +19,36 @@
                 <table>
                     <tr>
                         <td>
-                            <label for="username">username:</label>
+                            <label for="user_username_field">username:</label>
                         </td>
                         <td>
                         <!-- value="?= $_SESSION['presets']['username'] ?>"  -->
-                            <input type="text" id="username" name="username" required="true">                        
+                            <input type="text" id="user_username_field" name="user_username" required="true" maxlength="50">                        
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="email">email:</label>
+                            <label for="user_email_field">email:</label>
                         </td>
                         <td>
                         <!-- value="?= $_SESSION['presets']['username'] ?>"  -->
-                            <input type="text" id="email" name="email" required="true">
+                            <input type="text" id="user_email_field" name="user_email" required="true">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="password">password:</label>
+                            <label for="user_password_field">password:</label>
                         </td>
                         <td>
-                            <input type="password" id="password" name="password" required="true">
+                            <input type="password" id="user_password_field" name="user_password" required="true">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="repeat-password">repeat password:</label>
+                            <label for="user_password_repeat_field">repeat password:</label>
                         </td>
                         <td>
-                            <input type="password" id="repeat-password" name="passwordAgain" required="true">
+                            <input type="password" id="user_password_repeat_field" name="user_password_repeat" required="true">
                         </td>
                     </tr>
                     <tr>
@@ -63,11 +62,13 @@
 
 
             <?php
-                $validRegistration = isset($_GET['vavalidRegistrationlid']) ? $_GET['validRegistration'] : true;
-                if($validRegistration == 'false') { 
+                // $validRegistration = isset($_GET['validRegistration']) ? $_GET['validRegistration'] : true;
+                // if($_SESSION['valid'] == false) { 
             ?>
-                <!-- <span>?php print_r($_SESSION['error']);?></span> -->
-            <?php } ?>
+                <!-- <span>THERE WAS AN ERROR</span> -->
+            <?php 
+                // } 
+            ?>
 
         </div>
     </div>

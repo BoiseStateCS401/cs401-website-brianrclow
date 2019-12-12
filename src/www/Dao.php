@@ -1,11 +1,14 @@
 <?php
 class Dao
 {
+
+	// important information for the database
 	private $host = 'us-cdbr-iron-east-05.cleardb.net';
 	private $dbname = 'heroku_da004f557afe2d0';
 	private $username = 'b5b9568d237966';
 	private $password = 'b5ab58cd';
 	
+	// gets the connection to the database
 	public function getConnection() {
 	  try {
 		 $connection = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
@@ -15,41 +18,58 @@ class Dao
 	  return $connection;
 	}
 
-	// VALID USER CHECK used for login
-	public function isValidUser($username, $password){
-		$conn = $this->getConnection();
-		$loginquery = "SELECT * FROM users WHERE name = ? && password = ?";
-		$q = $conn->prepare($loginquery);
-		$q->execute([$username, $password]);
-		$valid = $q->fetch();
-		return $valid;
-	}
-
-	// REGISTER NEW USER
-	public function registerUser($u_name, $u_email, $u_password)
-	{
-	 $conn = $this->getConnection();
-	  $Query = "SELECT * FROM users WHERE name = ? && email = ?";
-	  $q1 = $conn ->prepare($Query);
-	  $q1->execute([$u_name,$u_password]);
-	  $valid = $q1->fetch();
+	// registers a new user
+	public function registerUser($user_username,$user_email,$user_password) {	// username, email and password are passed in
+	  $conn = $this->getConnection();											// connection is established with the database
+	  $checkUserExistsQuery = "SELECT * FROM users WHERE user_email = :user_email";			// create a query to check if there is a user that already exists with the same email
+	  $q1 = $conn ->prepare($checkUserExistsQuery);											// prepare the query in a prepared statement
+	  $q1->execute([$user_email]);												// execute the prepared statement with the value passed in
+	  $valid = $q1->fetch();													// fetch the results 
 		
+		// if there are no results (this means there are no users already existing with that email)
 		if(empty($valid))
 		{
-			$conn = $this->getConnection();
-			$registerQuery = "insert into users (name, email, password) values (:name, :email, :password)";
-			$q = $conn->prepare($registerQuery);
-			$q->bindParam(":name", $u_name);
-			$q->bindParam(":email", $u_email);
-			$q->bindParam(":password", $u_password);
-			$q->execute();
-			$_SESSION['messages'] = "You are registered";
-			header("Location: Login.php");
+			$conn = $this->getConnection();										// get another connection
+			$registerNewUserQuery = "INSERT INTO users (user_username, user_email, user_password) VALUES (:user_username, :user_email, :user_password)";	//SQL query to add user to database
+			$q = $conn->prepare($registerNewUserQuery);							// create new prepared statement		
+			$q->bindParam(":user_username", $user_username);					// bind username
+			$q->bindParam(":user_email", $user_email);							// bind email
+			$q->bindParam(":user_password", $user_password);					// bind password
+			$q->execute();														// execute the prepared statement
+			$_SESSION['messages'] = "You are registered";						// set the messages
+			header("Location: Login.php");										// redirect to login page for user to login to account
 		}
+
+		// there is a user that exists with that email, error back to registration
 		else{
-			$_SESSION['exists'] = "Your user name or email already exists!";
-			header("Location: Register.php");
+			$_SESSION['exists'] = "Your user name or email already exists!";	// sets message to say user already exists
+			header("Location: Register.php");									// refirect to registration page
 		}
+	}
+
+	// validate user credentials are in databse
+	public function validUserCredentials($user_username, $user_password){
+		$conn = $this->getConnection();												// get the database connection
+		$stmt = $conn->prepare("SELECT user_password FROM users WHERE user_username = :user_username");	// prepare SQL statement
+		$stmt->bindParam(':user_username',$user_username);
+		$stmt->execute();								//
+		$row = $stmt->fetch();
+		if(!row) {
+			return false;
+		}
+		$user_password_hash = $row['user_password'];
+		return password_verify($user_password, $user_password_hash);
+	}
+
+
+	// UPDATE USERNAME
+	public function changeUserUsername($username,$new_username) {
+		$conn = $this->getConnection();
+		$updateusernameQuery = "UPDATE users SET name = ? WHERE name = ?;";
+		$q = $conn->prepare($updateusernameQuery);
+		$q->execute([$username, $new_username]);
+		$valid = $q->fetch();
+		$_SESSION['update_username_message'] = "Your username has been updated!";
 	}
 	  
   }

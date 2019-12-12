@@ -1,7 +1,6 @@
 <!-- HEAD -->
 <?php 
     session_start();
-    $page='support';
     include("head.php");
 ?>
 
@@ -18,16 +17,19 @@
             <table class="support-flex-container">
                 <tr>
                     <td>
-                        <label for="username_field">username:</label>
+                        <label for="user_username_field">username:</label>
                     </td>
                     <td>
-                        <input type="text" name="user_username" id="username_field" required="true" > 
+                        <input type="text" name="user_username" id="user_username_field" required="true" > 
                     </td>
+                        
                 </tr>
                 <tr>
-                <td><label for="password_field">password:</label></td>
                     <td>
-                        <input type="password" name="user_password" id="password_field" required="true">
+                        <label for="user_password_field">password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="user_password" id="user_password_field" required="true">
                     </td>
                 </tr>
                 <tr>
@@ -38,6 +40,8 @@
             </table>
         </form>
     </div>
+    
+
 </body>
 
 

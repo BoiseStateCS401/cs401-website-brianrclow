@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<?php 
+<?php
     $page='support';
     include("head.php");
 ?>
@@ -32,11 +32,14 @@
                                 <input type="text" id="newUsername" name="newUsername"d>                        
                             </td>
                         </tr>
+                        <input type="submit" value="Confirm changes" class="confirmChangesButton">
+
                     </table>
                 </form>
 
-            <input type="submit" value="Confirm changes" class="confirmChangesButton">
-            <a href="account-main.php"><input type="submit" value="back"></a>
+                <a href="account-main.php"><input type="submit" value="back"></a>
+
+
 
         </div>
     </div>
