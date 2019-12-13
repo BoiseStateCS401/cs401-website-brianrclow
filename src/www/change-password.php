@@ -27,22 +27,30 @@
         <div>
         <h1 class="account-main-title">Change your password</h1>
             <p id="edit-account-info"></p>
-            <form id="registration" method="POST">
+            <form id="registration" method="POST" action="change-password-handler.php" autocomplete="off">
                     <table>
                         <tr>
                             <td>
-                                <label for="password">current password:</label>
+                                <label for="user_email_field">email:</label>
                             </td>
                             <td>
-                                <input type="password" id="password" name="password"d>                        
+                                <input type="text" id="user_email_field" name="user_email"d>                        
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="newPassword">new password:</label>
+                                <label for="user_password_field">password:</label>
                             </td>
                             <td>
-                                <input type="password" id="newPassword" name="newPassword"d>                        
+                                <input type="password" id="user_password_field" name="user_password"d>                        
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="new_password_field">new password:</label>
+                            </td>
+                            <td>
+                                <input type="password" id="new_password_field" name="new_password"d>                        
                             </td>
                         </tr>
                         <tr>

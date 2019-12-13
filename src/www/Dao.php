@@ -73,16 +73,31 @@ class Dao
 	// UPDATE USERNAME
 	public function changeUserUsername($user_username,$user_email,$new_username) {
 		$conn = $this->getConnection();
-		$updateusernameQuery = "UPDATE users SET user_username = :new_username WHERE user_email = :user_email";
-		$q = $conn->prepare($updateusernameQuery);
-		$q->bindParam(":new_username", $new_username);	
-		$q->bindParam(":user_email", $user_email);	
-		$q->execute();
-		$valid = $q->fetch();
-		if(!$valid){
-			return false;
-		}
-		else {
+		$stmt = $conn->prepare("UPDATE users SET user_username = :new_username WHERE user_email = :user_email");
+		$stmt->bindParam(":new_username", $new_username);
+		$stmt->bindParam(":user_email", $user_email);
+		$stmt->execute();
+		$valid = $stmt->fetch();
+	}
+
+	// UPDATE PASSWORD
+	public function changeUserPassword($user_email, $user_password, $new_password) {
+		$conn = $this->getConnection();
+
+		$user_password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+			if(!$user_password_hash) {
+				throw new Exception("Password could not be hashed.");
+			}
+
+		$stmt = $conn->prepare("UPDATE users SET user_password = :user_password WHERE user_email = :user_email");
+		$stmt->bindParam(":user_email", $user_email);
+		$stmt->bindParam(":user_password", $user_password);
+		$stmt->bindParam(":new_password", $user_password_hash);
+		$stmt->execute();
+		$valid = $stmt->fetch();
+		if(!$valid) {																						//
+			return false;																				//
+		} else {
 			return true;
 		}
 	}

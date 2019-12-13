@@ -28,7 +28,7 @@
         <div>
             <p id="edit-account-info"></p>
             <h1 class="account-main-title">Change your username</h1>
-            <form id="registration" method="POST" action="change-username-handler.php">
+            <form id="registration" method="POST" action="change-username-handler.php" autocomplete="off">
                     <table>
                         <tr>
                             <td>
@@ -68,8 +68,11 @@
                     </div>
                 </div>
 
-
-
+                <?php
+                    if(isset($_SESSION['new_username'])){
+                        $_SESSION['user_username'] = $_SESSION['new_username'];
+                    }
+                ?>
 
 
         </div>
