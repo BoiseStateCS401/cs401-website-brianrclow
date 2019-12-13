@@ -15,7 +15,7 @@
         <div>
             <h1 class="title">registration</h1>
 
-            <form id="registration" method="POST" action="registration-handler.php">
+            <form id="registration" method="POST" action="registration-handler.php" autocomplete="off">
                 <table>
                     <tr>
                         <td>

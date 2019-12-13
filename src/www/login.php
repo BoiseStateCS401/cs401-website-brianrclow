@@ -13,6 +13,7 @@
 
     <div>
         <h1 class="title">login</h1>
+
         <form id="login" action="login-handler.php" method="POST" autocomplete="off">
             <table class="support-flex-container">
                 <tr>
@@ -34,7 +35,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="submit-button" type="submit" name="submit" value="enter" >
+                        <input class="submit-button" type="submit" value="enter">
                     </td>
                 </tr>
             </table>

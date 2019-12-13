@@ -1,9 +1,9 @@
 <?php 
     session_start();
     include("head.php");
-    $user_username = $_SESSION['username'];
-    $user_password = $_SESSION['password'];
-    var_dump($_SESSION);
+    $user_username = $_SESSION['user_username'];
+    $user_password = $_SESSION['user_password'];
+    // var_dump($_SESSION);
 ?>
 
 <!-- BODY -->
@@ -34,7 +34,7 @@
 
     <div class="support-flex-container">
         <div>
-            <a href="logout.php">logout</a>
+            <a href="logout.php"><button>logout</button></a>
         </div>
     </div>
 

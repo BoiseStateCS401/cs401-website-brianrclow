@@ -49,16 +49,18 @@ class Dao
 
 	// validate user credentials are in databse
 	public function validUserCredentials($user_username, $user_password){
-		$conn = $this->getConnection();												// get the database connection
+		$conn = $this->getConnection();																	// get the database connection
 		$stmt = $conn->prepare("SELECT user_password FROM users WHERE user_username = :user_username");	// prepare SQL statement
-		$stmt->bindParam(':user_username',$user_username);
-		$stmt->execute();								//
-		$row = $stmt->fetch();
-		if(!row) {
-			return false;
-		}
-		$user_password_hash = $row['user_password'];
-		return password_verify($user_password, $user_password_hash);
+		$stmt->bindParam(':user_username',$user_username);												//
+		$stmt->execute();																				//
+		$row = $stmt->fetch();																			//
+		if(!row) {																						//
+			return false;																				//
+		} else {
+			return true;
+		}									
+		// $user_password_hash = $row['user_password'];													//
+		// return password_verify($user_password, $user_password_hash);									//
 	}
 
 

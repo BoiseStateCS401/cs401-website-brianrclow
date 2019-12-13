@@ -31,6 +31,8 @@ if(empty($user_password) || strlen($user_password) < 10 || strlen($user_password
 if($user_password !== $user_password_repeat){
     $error .= "ERROR: passwords don't match";
 }
+
+// sets the any errors to the session variable to be used to print out
 $_SESSION["error"] = $error;
 
 
