@@ -1,5 +1,9 @@
 <!-- HEADER -->
-<?php 
+<?php
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	}
     $page='download';
     include("head.php");
 ?>

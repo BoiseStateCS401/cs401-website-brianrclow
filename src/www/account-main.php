@@ -1,9 +1,21 @@
 <?php 
-    session_start();
-    include("head.php");
-    $user_username = $_SESSION['user_username'];
-    $user_password = $_SESSION['user_password'];
-    // var_dump($_SESSION);
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+
+	if(!isset($_SESSION['userLoggedin'])){
+        header("Location: support.php");
+    } 
+    else {
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
+        // var_dump($_SESSION); // FOR TESTING
+        include("head.php");
+        $user_username = $_SESSION['user_username'];
+        $user_password = $_SESSION['user_password'];
 ?>
 
 <!-- BODY -->
@@ -23,12 +35,10 @@
 
     <div class="support-flex-container">
         <div>
-            <!-- ADD: href="change-username.php"  -->
-            <a><div class="support-buttons">change username</div></! -->
+            <a href="change-username.php"><div class="support-buttons">change username</div></! -->
         </div>
         <div>
-        <!-- ADD: href="change-password.php" -->
-            <a><div class="support-buttons">change password</div></a>
+            <a href="change-password.php"><div class="support-buttons">change password</div></a>
         </div>
     </div>
 
@@ -45,4 +55,8 @@
         include("footer.php");
     ?>
 </body>
+
+<?php
+    }
+?>
 

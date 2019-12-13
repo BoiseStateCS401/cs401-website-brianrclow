@@ -1,6 +1,9 @@
 <!-- HEAD -->
 <?php 
-    session_start();
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	}
     include("head.php");
 ?>
 
@@ -35,11 +38,17 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="submit-button" type="submit" value="enter">
+                        <input type="submit" value="enter">
                     </td>
                 </tr>
             </table>
         </form>
+        <div class="support-flex-container">
+            <div>
+                <a href="support.php"><input type="submit" value="back"></a>
+            </div>
+        </div>
+        
     </div>
     
 

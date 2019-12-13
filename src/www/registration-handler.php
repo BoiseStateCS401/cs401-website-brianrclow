@@ -1,5 +1,8 @@
 <?php
-session_start();
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	}
 include_once 'Dao.php';
 // get the data passed into the post form
 $user_username = $_POST['user_username'];
@@ -37,6 +40,9 @@ $_SESSION["error"] = $error;
 
 
 
+
+
+
 // no errors in registration forms
  if($error === "") { 
     $validRegistration = true;
@@ -49,7 +55,7 @@ $_SESSION["error"] = $error;
  // there are errors
  else{
      $validRegistration = false;
-     header('Location: registration.php?validRegistration=false'); 
+     header('Location: registration.php'); 
      $_SESSION['presets'] = array('username' => htmlspecialchars($user_username),'email' => htmlspecialchars($user_email));
      die;
 } ?>

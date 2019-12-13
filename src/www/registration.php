@@ -1,6 +1,9 @@
 <!-- HEAD -->
 <?php 
-    session_start();
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	}
     include("head.php");
 ?>
 
@@ -58,6 +61,12 @@
                     </tr>
                 </table>
             </form>
+
+            <div class="support-flex-container">
+                <div>
+                    <a href="support.php"><input type="submit" value="back"></a>
+                </div>
+            </div>
 
 
 

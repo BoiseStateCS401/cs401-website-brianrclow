@@ -1,5 +1,9 @@
 <!-- HEADER -->
 <?php 
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	}
 	$page='screenshots';
 	include("head.php");
 ?>

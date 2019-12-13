@@ -1,7 +1,14 @@
 <!-- HEAD -->
 <?php 
-	session_start();
-    $page='support';
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	}
+	$page='support';
+	if(isset($_SESSION['userLoggedin']) && $_SESSION['userLoggedin']  == true){
+		header("Location: account-main.php");
+	} 
+	else {
     include("head.php");
 ?>
 
@@ -14,10 +21,6 @@
 
 <div class="support-flex-container">
 	<div>
-		<?php
-			if($validLogin = false){
-				include("account-main.php");
-			 } else { ?>
 			 
 			<!-- page title and lines -->
 			<p class="title">support</p>
@@ -30,7 +33,7 @@
 				<div><a href="registration.php"><div class="support-buttons">signup</div></a></div>
 			</div>
 
-		<?php } ?>
+
 
 
 	<p class="logout-confirmation"></p>
@@ -46,3 +49,7 @@
 
 
 </body>
+
+<?php 
+	} 
+?>

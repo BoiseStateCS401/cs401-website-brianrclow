@@ -30,11 +30,18 @@ class Dao
 		if(empty($valid))
 		{
 			$conn = $this->getConnection();										// get another connection
+
+			$user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
+			if(!$user_password_hash) {
+				throw new Exception("Password could not be hashed.");
+			}
+
+
 			$registerNewUserQuery = "INSERT INTO users (user_username, user_email, user_password) VALUES (:user_username, :user_email, :user_password)";	//SQL query to add user to database
 			$q = $conn->prepare($registerNewUserQuery);							// create new prepared statement		
 			$q->bindParam(":user_username", $user_username);					// bind username
 			$q->bindParam(":user_email", $user_email);							// bind email
-			$q->bindParam(":user_password", $user_password);					// bind password
+			$q->bindParam(":user_password", $user_password_hash);				// bind password
 			$q->execute();														// execute the prepared statement
 			$_SESSION['messages'] = "You are registered";						// set the messages
 			header("Location: Login.php");										// redirect to login page for user to login to account
@@ -54,13 +61,12 @@ class Dao
 		$stmt->bindParam(':user_username',$user_username);												//
 		$stmt->execute();																				//
 		$row = $stmt->fetch();																			//
-		if(!row) {																						//
+		if(!$row) {																						//
 			return false;																				//
 		} else {
-			return true;
-		}									
-		// $user_password_hash = $row['user_password'];													//
-		// return password_verify($user_password, $user_password_hash);									//
+			$user_password_hash = $row['user_password'];												//
+			return password_verify($user_password, $user_password_hash);			
+		}
 	}
 
 

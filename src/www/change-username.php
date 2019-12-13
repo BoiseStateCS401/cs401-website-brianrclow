@@ -1,5 +1,19 @@
 <!-- HEADER -->
 <?php
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+    }
+    
+    if(!isset($_SESSION['userLoggedin'])){
+        header("Location: support.php");
+    } 
+    else {
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        }
+
     $page='support';
     include("head.php");
 ?>
@@ -53,3 +67,6 @@
 
 </body>
 
+<?php
+    }
+?>

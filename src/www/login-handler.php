@@ -1,5 +1,8 @@
 <?php
-session_start();
+	if(!isset($_SESSION)) 
+	{ 
+		session_start(); 
+	}
 include_once 'Dao.php';
 
 // get the data passed into the post form
@@ -27,26 +30,28 @@ if(empty($user_password) || strlen($user_password) < 10 || strlen($user_password
 $_SESSION["error"] = $error;
 
 
+
+
+
 // If there are no errors, then its a valid login pattern
 if($error === "") {
-  include_once 'Dao.php';
+  $validLogin = true;
   $dao = new Dao();
   if($dao->validUserCredentials($user_username, $user_password)) {
-    $validLogin = true;
     $_SESSION['userLoggedin'] = true;
     session_regenerate_id(true);
     header('Location: account-main.php');
   }
   else {
     $error .= "Invalid username or password.";
-    header('Location: login.php?validLogin=false');
+    header('Location: login.php');
   }
 }
 
 // If there are errors then send them back to login and pass the errors
 else{
    $validLogin = false;
-   header('Location: login.php?validLogin=false');
+   header('Location: login.php');
    $_SESSION['presets'] = array('user_username' => htmlspecialchars($user_username));
 } ?>
 
