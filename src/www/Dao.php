@@ -71,13 +71,20 @@ class Dao
 
 
 	// UPDATE USERNAME
-	public function changeUserUsername($username,$new_username) {
+	public function changeUserUsername($user_username,$user_email,$new_username) {
 		$conn = $this->getConnection();
-		$updateusernameQuery = "UPDATE users SET name = ? WHERE name = ?;";
+		$updateusernameQuery = "UPDATE users SET user_username = :new_username WHERE user_email = :user_email";
 		$q = $conn->prepare($updateusernameQuery);
-		$q->execute([$username, $new_username]);
+		$q->bindParam(":new_username", $new_username);	
+		$q->bindParam(":user_email", $user_email);	
+		$q->execute();
 		$valid = $q->fetch();
-		$_SESSION['update_username_message'] = "Your username has been updated!";
+		if(!$valid){
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 	  
   }

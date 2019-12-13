@@ -45,13 +45,21 @@
                                 <input type="password" id="newPassword" name="newPassword"d>                        
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Confirm changes" class="confirmChangesButton">    
+                            </td>
+                        </tr>
                     </table>
                 </form>
 
+            <div class="support-flex-container">
+                <div>
+                    <a href="account-main.php"><input type="submit" value="back"></a>
+                </div>
+            </div>
 
-            <input type="submit" value="Confirm changes" class="confirmChangesButton">
 
-            <a href="account-main.php"><input type="submit" value="back"></a>
 
         </div>
     </div>

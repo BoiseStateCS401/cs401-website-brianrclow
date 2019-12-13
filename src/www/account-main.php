@@ -44,7 +44,8 @@
 
     <div class="support-flex-container">
         <div>
-            <a href="logout.php"><button>logout</button></a>
+            <!-- href="logout.php" -->
+            <a href="logout.php"><button class="logoutButton">logout</button></a>
         </div>
     </div>
 

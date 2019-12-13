@@ -28,30 +28,47 @@
         <div>
             <p id="edit-account-info"></p>
             <h1 class="account-main-title">Change your username</h1>
-            <form id="registration" method="POST">
+            <form id="registration" method="POST" action="change-username-handler.php">
                     <table>
                         <tr>
                             <td>
-                                <label for="username">current username:</label>
+                                <label for="user_username_field">username:</label>
                             </td>
                             <td>
-                                <input type="text" id="username" name="username"d>                        
+                                <input type="text" id="user_username_field" name="user_username"d>                        
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="newUsername">new username:</label>
+                                <label for="user_email_field">email:</label>
                             </td>
                             <td>
-                                <input type="text" id="newUsername" name="newUsername"d>                        
+                                <input type="text" id="user_email_field" name="user_email"d>                        
                             </td>
                         </tr>
-                        <input type="submit" value="Confirm changes" class="confirmChangesButton">
-
+                        <tr>
+                            <td>
+                                <label for="new_username_field">new username:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="new_username_field" name="new_username"d>                        
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Confirm change" class="confirmChangesButton">
+                            </td>
+                        </tr>
                     </table>
                 </form>
 
-                <a href="account-main.php"><input type="submit" value="back"></a>
+                <div class="support-flex-container">
+                    <div>
+                        <a href="account-main.php"><input type="submit" value="back"></a>
+                    </div>
+                </div>
+
+
 
 
 

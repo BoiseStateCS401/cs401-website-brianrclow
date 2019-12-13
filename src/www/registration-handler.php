@@ -49,7 +49,10 @@ $_SESSION["error"] = $error;
     include_once 'Dao.php';
     $dao = new Dao();
     $dao->registerUser($user_username, $user_email, $user_password);
-    header('Location: login.php');
+    $dao->validUserCredentials($user_username, $user_password);
+    $_SESSION['userLoggedin'] = true;
+    session_regenerate_id(true);
+    header('Location: account-main.php');
     die;
  }
  // there are errors

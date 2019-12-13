@@ -5,10 +5,8 @@ confirmLogoutClick.addEventListener('click', confirmLogout);
 function confirmLogout() {
     var responseText;
     if (confirm("Are you sure you want to logout of your account?")) {
-        // so they know they are now logged out
-        responseText = "You have been logged out.";
+        // "ok" for log out
     } else {
-        // do nothing becuase they are stil logged in
+        // "cancel" for stay logged in
     }
-    document.getElementById("logout-confirmation").innerHTML = responseText;
   }
